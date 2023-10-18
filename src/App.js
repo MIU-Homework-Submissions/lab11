@@ -1,6 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
 import { useState } from "react";
+import FocusInput from "./FocusInput";
 
 // Create a component which loop through the colors in an array every 1 second, starting from the first element in the array. If it reaches the end of the array, start from 0 again, until the component is unmounted by click unmount button.
 
@@ -24,12 +25,14 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <header className="App-header">
+    <div>
+      <header>
         <button onClick={changeColor}>Change Color</button>
         <button onClick={unmount}>Unmount</button>
         {!isUnmounted && <div style={{ color: color }}>{color}</div>}
       </header>
+
+      <FocusInput />
     </div>
   );
 }
